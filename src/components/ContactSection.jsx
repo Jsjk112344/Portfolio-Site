@@ -15,9 +15,9 @@ const ContactSection = () => {
             className="text-center max-w-lg mx-auto"
           >
             <p className="section-label">Get in Touch</p>
-            <h2 className="section-heading mb-4">Let's Build Something</h2>
+            <h2 className="section-heading mb-4">Let's Build Together</h2>
             <p className="text-muted mb-8">
-              Open to collaborations, freelance work, and interesting
+              Open to collaborations, talking about Ducket, and interesting
               conversations.
             </p>
 

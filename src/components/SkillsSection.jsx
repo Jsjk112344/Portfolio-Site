@@ -64,7 +64,7 @@ const SkillsSection = () => {
                 <img
                   src={cert.image}
                   alt={cert.name}
-                  className="w-16 h-16 object-contain"
+                  className={`object-contain ${cert.imageClass || "w-16 h-16"}`}
                 />
                 <div className="flex-1">
                   <h4 className="text-lg font-semibold text-foreground">

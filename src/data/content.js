@@ -255,6 +255,7 @@ export const certifications = [
     name: "OSEP",
     fullName: "Offensive Security Experienced Pentester",
     image: osepBadge,
+    imageClass: "w-[7.5rem] h-[5.5rem] -ml-7 object-contain",
     url: "https://credentials.offsec.com/33bbf414-c222-4b6c-ba28-d04bca40b309",
   },
 ];
