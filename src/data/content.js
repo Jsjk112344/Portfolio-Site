@@ -10,7 +10,7 @@ import osepBadge from "@/assets/osep.png";
 export const siteConfig = {
   name: "Justin Soon",
   logo: "JS",
-  title: "Co-founder & CTO",
+  title: "Founder · Builder · Hacker",
   email: "jienkhye01@gmail.com",
   github: "https://github.com/Jsjk112344",
   linkedin: "https://www.linkedin.com/in/justin-soon-558372212/",
@@ -18,7 +18,7 @@ export const siteConfig = {
 };
 
 export const heroData = {
-  subtitle: "CO-FOUNDER & CTO",
+  subtitle: "FOUNDER · BUILDER · HACKER",
   firstName: "Justin",
   lastName: "Soon",
   description:

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin } from "lucide-react";
 import { heroData, siteConfig } from "@/data/content";
+import ducketLogo from "@/assets/ducket.png";
 
 const HeroSection = () => {
   return (
@@ -14,9 +15,18 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <p className="font-mono text-sm tracking-widest text-accent uppercase">
-              {heroData.subtitle}
-            </p>
+            <div className="flex items-center gap-3">
+              <a href="https://ducket.io" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <img
+                  src={ducketLogo}
+                  alt="Ducket"
+                  className="h-6 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                />
+              </a>
+              <p className="font-mono text-sm tracking-widest text-accent uppercase">
+                {heroData.subtitle}
+              </p>
+            </div>
 
             <h1 className="font-display font-bold text-5xl md:text-7xl leading-[1.1]">
               {heroData.firstName}
