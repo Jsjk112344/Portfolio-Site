@@ -1,7 +1,7 @@
 import heroImg from "@/assets/justin-soon.jpg";
 import ducketImg from "@/assets/ducket.png";
 import pathpilotImg from "@/assets/pathpilot.png";
-import boopImg from "@/assets/boop.svg";
+import boopImg from "@/assets/boop.png";
 import cafeconnectImg from "@/assets/cafeconnect.png";
 import readlyImg from "@/assets/readly.png";
 import oscpBadge from "@/assets/oscp.png";
@@ -22,7 +22,7 @@ export const heroData = {
   firstName: "Justin",
   lastName: "Soon",
   description:
-    "Building blockchain-based NFT ticketing at Ducket. Full-stack developer with expertise in offensive cybersecurity (OSCP, OSEP) and machine learning.",
+    "Building Ducket, a vertical SaaS for live event organizers. Full-stack developer with expertise in offensive cybersecurity (OSCP, OSEP) and machine learning.",
   image: heroImg,
 };
 
@@ -32,37 +32,37 @@ export const projects = [
     title: "Ducket",
     role: "Co-founder & CTO",
     description:
-      "A full-stack NFT ticketing platform on Polygon with enforced resale price caps to combat ticket scalping. Features Stripe Connect payments, dynamic QR validation, smart contract integration, and multi-tenant architecture.",
+      "A vertical SaaS for live event organizers. One unified operating platform for ticketing, check-in, perks, communities, analytics, and payouts, replacing the patchwork of Eventbrite, Mailchimp, Notion, and spreadsheets.",
     image: ducketImg,
-    tags: ["React", "TypeScript", "Solidity", "Stripe", "Supabase"],
+    tags: ["React", "TypeScript", "Supabase", "Stripe", "Solidity"],
     featured: true,
     detail: {
-      subtitle: "Blockchain-Based NFT Ticketing Platform - Co-Founded Startup",
+      subtitle: "Vertical SaaS for Live Event Organizers - Co-Founded Startup",
       overview:
-        "Ducket is a full-stack NFT ticketing platform built on Polygon that combats ticket scalping through enforced resale price caps via smart contracts. The platform features hybrid payment options (Stripe and crypto wallets), dynamic QR validation, and a multi-tenant architecture serving buyers, organizers, admins, and event scanners from a single codebase.",
+        "Ducket is the unified operating platform for live event organizers. Ticketing, check-in, perks, communities, analytics, and payouts run from a single back office, replacing the stack of Eventbrite, Mailchimp, Notion, and spreadsheets that organizers stitch together today. As of May 2026 we have ~93 users across 16 organizers, with 5 events run and 65 credentials minted. Pre-PMF, optimizing for learning velocity.",
       motivation:
-        "The live events industry is plagued by ticket scalping, where bots and resellers buy tickets in bulk and resell them at exorbitant markups. Fans miss out on events they love, and artists lose control over pricing. By minting tickets as NFTs with smart contract-enforced resale price caps, we created a system where tickets can be freely transferred but never sold above a fair price.",
+        "Mid-size organizers (venues, festivals, course providers, fitness studios) run their business across half a dozen disconnected tools. The data lives in different vendors, fan history is invisible across events, and sponsors have no verifiable way to audit attendance claims. Ducket collapses the stack into one product. Underneath the SaaS, an on-chain attendance graph compounds quietly: every scan and perk redemption writes a permanent, verifiable record. The chain is load-bearing for two things only — lock-in protection (organizer and attendee data survives if Ducket disappears) and verifiability (sponsors can trust attendance claims without trusting us). It is invisible to fans. We do not pitch NFT tickets.",
       technologies: [
-        { name: "React", icon: "react", description: "Frontend framework with Vite for fast development" },
-        { name: "TypeScript", icon: "typescript", description: "Full type safety across the entire stack" },
-        { name: "Solidity", icon: "solidity", description: "Smart contracts for ERC-1155 NFT tickets" },
-        { name: "Supabase", icon: "supabase", description: "PostgreSQL backend with 67 Edge Functions" },
-        { name: "Stripe", icon: "stripe", description: "Payment processing with Stripe Connect" },
-        { name: "Polygon", icon: "polygon", description: "Layer 2 blockchain for low-cost NFT minting" },
+        { name: "React", icon: "react", description: "Four apps (buyer, organizer, admin, landing) from one Vite codebase" },
+        { name: "TypeScript", icon: "typescript", description: "Full type safety across the stack" },
+        { name: "Supabase", icon: "supabase", description: "Postgres with RLS plus ~84 Deno edge functions" },
+        { name: "Stripe", icon: "stripe", description: "Stripe Connect for organizer payouts and subscription billing" },
+        { name: "Solidity", icon: "solidity", description: "ERC-1155 contracts on Polygon for credentials and tickets" },
+        { name: "Polygon", icon: "polygon", description: "Layer 2 for low-cost, gas-sponsored credential minting" },
       ],
       features: [
-        { title: "NFT Ticket Minting", description: "ERC-1155 smart contracts with flexible ticket tiers, prices, and supply limits." },
-        { title: "Price-Capped Resale", description: "Smart contract-enforced maximum resale prices prevent scalping at the protocol level." },
-        { title: "Hybrid Payments", description: "Support for both credit card payments via Stripe and cryptocurrency wallet payments." },
-        { title: "Dynamic QR Validation", description: "Rotating QR codes for ticket validation prevent screenshot fraud." },
-        { title: "Multi-Tenant Architecture", description: "Single codebase serving buyer, organizer, admin, and scanner interfaces." },
-        { title: "Real-Time Availability", description: "Live ticket availability updates using Supabase Realtime subscriptions." },
+        { title: "Ticketing & Checkout", description: "Tiered tickets, promo codes, refunds, and Stripe-powered checkout with organizer payouts via Stripe Connect." },
+        { title: "Check-in & Scanning", description: "Dynamic QR validation with rotating tokens, plus a scanner app for event staff to admit attendees on the door." },
+        { title: "Perks & Communities", description: "Reward attendance with redeemable perks; build organizer-owned communities tied to verified event participation." },
+        { title: "Analytics & Payouts", description: "Per-event dashboards covering sales, attendance, and engagement, with payouts streamed directly to organizer Stripe accounts." },
+        { title: "Custodial Wallets", description: "Every fan gets an auto-provisioned wallet (AES-256-GCM encrypted). Backend sponsors all gas. Fans never sign anything." },
+        { title: "On-chain Attendance Graph", description: "Each scan and redemption mints a soulbound credential. Organizer data survives platform risk; sponsors get verifiable proof." },
       ],
       challenges: [
-        { title: "Smart Contract Security", description: "Handling real money and NFT assets required bulletproof logic.", solution: "Comprehensive testing with Hardhat, OpenZeppelin patterns, careful access control." },
-        { title: "Payment Flow Complexity", description: "Supporting both fiat and crypto while maintaining consistent state.", solution: "Robust payment queue system with idempotent webhook handlers and state machines." },
-        { title: "QR Code Anti-Fraud", description: "Static QR codes are vulnerable to screenshot sharing.", solution: "Dynamic QR codes with server-side rotation and time-based validation tokens." },
-        { title: "Multi-Tenant Deployment", description: "Serving four apps from a single codebase cleanly.", solution: "Vite multi-entry config with shared component library and feature flag system." },
+        { title: "Keeping the Chain Invisible", description: "Web3 UX scares off mainstream organizers and fans.", solution: "Custodial wallets, sponsored gas, async mint queue with retries. Fans see a normal ticketing site; the chain runs underneath." },
+        { title: "Mint Reliability at Scale", description: "Chain failures must never block ticket purchases.", solution: "Decoupled mint queue with FOR UPDATE SKIP LOCKED dispatch and a cron-driven retry processor, so checkout always completes." },
+        { title: "Two-Environment Safety", description: "Real money on mainnet alongside a test environment that is safe to break.", solution: "Strict separation between ducket-test (Polygon Amoy) and ducket-web (Polygon mainnet) databases, with environment-aware edge function deploys." },
+        { title: "Multi-App Codebase", description: "Buyer, organizer, admin, and landing surfaces sharing logic without coupling.", solution: "Single Vite codebase with VITE_APP_MODE switching at runtime, shared components, and per-domain entry points." },
       ],
       links: { website: "https://ducket.io" },
     },
@@ -109,36 +109,36 @@ export const projects = [
     slug: "boop",
     title: "Boop",
     description:
-      "A mobile app for real-world exploration with NFC check-in, stamp collecting, achievement badges, and social features.",
+      "A location-based social discovery app. Proximity-verified check-ins, collectible stamps, group sessions joined via QR, and a friend-first activity feed showing what's happening near you right now.",
     image: boopImg,
     tags: ["React Native", "TypeScript", "Supabase", "Expo"],
     detail: {
-      subtitle: "Real-World Exploration App with NFC Check-ins & Social Discovery",
+      subtitle: "Location-Based Social Discovery — Friend Who Knows the City",
       overview:
-        "Boop is a mobile application for real-world exploration with NFC check-in capabilities. Users discover locations, collect stamps, earn badges, and connect through a social layer.",
+        "Boop answers one question: what should I do right now, near me, with the people I care about? Every check-in (a 'boop') is proximity-verified within 500m, can carry up to 6 photos plus a caption, and ripples atomically to the map, the friend feed, and the user's passport. Group sessions sync live across phones via Supabase Realtime, joined by QR code, with optional NFC as an Android-only secondary path.",
       motivation:
-        "I wanted to create an app that encourages people to explore the world around them in a fun, social way. By combining NFC check-ins, stamp collections, and a friend activity feed, Boop turns exploration into a collectible experience.",
+        "Most discovery apps optimize for star ratings and aggregate history. Boop optimizes for the present tense. Live activity from friends beats anonymous review counts, and friendships form in person during the same group session that produces the shared memory. The product behaves like a friend who knows the city, not an algorithm.",
       technologies: [
-        { name: "React Native", icon: "react", description: "Cross-platform mobile with Expo 54" },
+        { name: "React Native", icon: "react", description: "Cross-platform mobile with Expo" },
         { name: "TypeScript", icon: "typescript", description: "Type-safe development across the codebase" },
-        { name: "Supabase", icon: "supabase", description: "Backend with PostgreSQL and real-time subs" },
-        { name: "PostGIS", icon: "postgresql", description: "Geospatial queries for location discovery" },
+        { name: "Supabase", icon: "supabase", description: "PostgreSQL, Realtime subscriptions, edge functions, storage" },
+        { name: "PostGIS", icon: "postgresql", description: "Geospatial queries for proximity verification and discovery" },
+        { name: "AWS Rekognition", icon: "aws", description: "Face matching for the YouShot photo-distribution feature" },
         { name: "TanStack Query", icon: "reactquery", description: "Server state management with caching" },
-        { name: "Zustand", icon: "npm", description: "Lightweight client state management" },
       ],
       features: [
-        { title: "Location Discovery", description: "Interactive map with PostGIS-powered geospatial search." },
-        { title: "NFC Check-ins", description: "Check in at locations with photos, captions, and participant tags." },
-        { title: "Stamp Collection", description: "Digital passport with location-specific stamps on first visits." },
-        { title: "Achievement Badges", description: "Badge system tied to activities, streaks, and milestones." },
-        { title: "Social Feed", description: "Friend system with real-time activity feed showing friend boops." },
-        { title: "Group Boops", description: "Multi-user check-ins for shared exploration experiences." },
+        { title: "Proximity-Verified Check-ins", description: "500m geofenced 'boops' with up to 6 photos. The proximity bound is a trust primitive, not a UX detail." },
+        { title: "Group Boops via QR", description: "Live-synced multi-user sessions with shared albums. Friendships auto-form between participants at the moment of the boop." },
+        { title: "Friend-First Feed", description: "Activity feed filtered to friends only — no algorithmic ranking, no anonymous noise." },
+        { title: "Stamp Passport", description: "Auto-awarded collectible stamps tied to partner venues, displayed as a grid, timeline, and badge collection." },
+        { title: "Live Venue Overlays", description: "Map shows who's there now before you arrive — network-based social proof replaces star ratings." },
+        { title: "YouShot Photo Distribution", description: "Face-matching pipeline using AWS Rekognition to deliver event photos to the right attendees automatically." },
       ],
       challenges: [
-        { title: "Geospatial Performance", description: "Efficient location search across thousands of venues.", solution: "PostGIS spatial indexes with Supabase RPC functions." },
-        { title: "Real-time Feed", description: "Responsive activity feed with subscription lifecycle management.", solution: "Supabase Realtime with TanStack Query caching." },
-        { title: "Offline-First", description: "Handling check-ins without network access.", solution: "Zustand for optimistic local state with background sync." },
-        { title: "NFC Reliability", description: "NFC varies across Android devices.", solution: "Fallback proximity-based check-ins with graceful degradation." },
+        { title: "Geospatial Correctness", description: "The 500m verification is load-bearing for trust.", solution: "PostGIS RPCs with auto-expanding search radius (5km → 10km → 15km) so users never see an empty map." },
+        { title: "Live Group Sync", description: "Multiple phones contributing photos and captions to one session in real time.", solution: "Supabase Realtime subscriptions with shared-album hooks, joined deterministically via QR." },
+        { title: "Photo Performance", description: "Photo grids are first-class — compression and load times directly shape the feed feel.", solution: "Storage-side compression with progressive loading and TanStack Query caching for repeat views." },
+        { title: "NFC Fragmentation", description: "NFC varies across Android and isn't available on iOS at all.", solution: "QR is the primary join path on every platform. NFC remains as an opt-in Android-only enhancement, never assumed." },
       ],
       links: { github: "#" },
     },
@@ -267,7 +267,7 @@ export const experience = [
     location: "Singapore",
     period: "2025 - Present",
     description:
-      "Co-founded a blockchain-based NFT ticketing startup. Architected the full platform from smart contracts to frontend, backend (67 Supabase Edge Functions), and payments (Stripe Connect).",
+      "Co-founded a vertical SaaS for live event organizers, with an on-chain attendance graph as the moat. Architected the full platform: four apps from one Vite codebase, ~84 Supabase edge functions, Stripe Connect payouts, custodial wallets with sponsored gas. ~93 users, 16 organizers, 5 events run as of May 2026.",
   },
   {
     title: "Cybersecurity Engineer (Offensive Security)",
