@@ -14,7 +14,7 @@ export const siteConfig = {
   email: "jienkhye01@gmail.com",
   github: "https://github.com/Jsjk112344",
   linkedin: "https://www.linkedin.com/in/justin-soon-558372212/",
-  resumePath: "/Justin_Resume_Mar2025.pdf",
+  resumePath: "/Justin_Resume.pdf",
 };
 
 export const heroData = {
