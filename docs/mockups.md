@@ -20,4 +20,4 @@ This file lives outside `public/`, so the slug list is never deployed.
 
 | Slug | Site | Added |
 | --- | --- | --- |
-| gissp9ieyepr | Prox Coffee (custom sites/prox-website) — 6 pages | 2026-09-23 |
+| _(none parked)_ | | |
