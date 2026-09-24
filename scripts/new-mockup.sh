@@ -24,21 +24,9 @@ rsync -a --exclude '.git' --exclude '.gitignore' --exclude 'README.md' \
   --exclude '.DS_Store' --exclude 'node_modules' "$SRC"/ "$DEST"/
 
 # <base> keeps relative asset paths working whether or not the URL has a
-# trailing slash; noindex keeps client mockups out of search results.
-python3 - "$DEST/index.html" "$SLUG" <<'PY'
-import re, sys, pathlib
-p, slug = pathlib.Path(sys.argv[1]), sys.argv[2]
-s = p.read_text()
-s = re.sub(r'<base\b[^>]*>\s*', '', s, flags=re.I)
-tags = f'<base href="/mockups/{slug}/">\n<meta name="robots" content="noindex, nofollow">\n'
-# after the charset/viewport metas when they exist, else straight after <head>
-m = re.search(r'<meta[^>]+name=["\']viewport["\'][^>]*>\n?|<meta[^>]+charset[^>]*>\n?', s, re.I)
-if m:
-    s = s[:m.end()] + tags + s[m.end():]
-else:
-    s = re.sub(r'(<head\b[^>]*>\s*)', lambda x: x.group(1) + tags, s, count=1, flags=re.I)
-p.write_text(s)
-PY
+# trailing slash; noindex keeps client mockups out of search results. Applied
+# to every page, not just index.html — mockups are usually multi-page.
+python3 "$ROOT/scripts/stamp-mockup.py" "$DEST" "$SLUG"
 
 mkdir -p "$ROOT/docs"
 printf '| %s | %s | %s |\n' "$SLUG" "${LABEL:-$(basename "$SRC")}" "$(date +%Y-%m-%d)" >> "$ROOT/docs/mockups.md"
